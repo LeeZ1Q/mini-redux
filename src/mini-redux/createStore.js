@@ -6,6 +6,7 @@
  * @param {function} enhancer
  * @returns {store} store对象
  */
+
 export default function createStore(reducer, preloadedState, enhancer) {
 	// 当省略了preloadedState，直接传入enhancer时
 	if (typeof preloadedState === "function" && typeof enhancer === "undefined") {
@@ -67,7 +68,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
 	// 返回store对象
 	return {
 		getState,
-		subscribe,
 		dispatch,
+		subscribe,
 	};
 }
