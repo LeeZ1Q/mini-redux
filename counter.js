@@ -1,5 +1,6 @@
-import { compose, createStore } from './src/mini-redux/index';
+import { compose, createStore, applyMiddleware } from './src/mini-redux/index';
 import { loggerEnhancer, loggerEnhancer2 } from './src/example/enhancer';
+import { loggerMiddleware } from './src/example/middleware';
 
 //获取元素
 const container = document.querySelector("#container");
@@ -20,7 +21,11 @@ const reducer = (state = 0, action) => {
 
 //Store
 const enhancer = compose(loggerEnhancer, loggerEnhancer2);
-const store = createStore(reducer, undefined, enhancer);
+const store = createStore(
+	reducer, 
+	undefined, 
+	compose(applyMiddleware(loggerMiddleware), enhancer)
+);
 
 //Render
 const render = () => {
