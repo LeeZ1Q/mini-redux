@@ -1,1 +1,1 @@
-# mini-redux
+# mini-redux with js
