@@ -1,4 +1,4 @@
-# mini-redux with js
+# mini-redux with JavaScript
 ## APIs
 
 - **createStore()**
